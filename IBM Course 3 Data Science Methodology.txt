@@ -1,0 +1,171 @@
+cd ~/Desktop
+
+
+
+
+
+# First of all, create new Repo on Github
+
+cd ~/Desktop/Github2/GitReps/	# create a new directory on your computer
+mkdri Course			# every new directory needs to be create from the command line
+cd Course 
+
+
+
+git init
+git config --global user.email "jorescal@gmail.com"
+
+
+ls				# make sure you have the files you want to upload on the directory you are seeting
+
+
+echo "# Data Science Course" >> README.md
+git add README.md
+git commit  -m "first commit of course notes xx/xx/2020"
+
+
+
+git add 'IBM Course 3 Data Science Methodology.txt'
+git commit  -m "commit # upedate XX of course notes date xx/xx/2020"
+
+git remote add origin git@github.com:jorescal/Course.git
+git push -u origin master
+
+
+
+
+
+********** for every day update 
+
+
+cd ~/Desktop/Github2/GitReps/Course
+
+
+git add 'IBM Course 3 Data Science Methodology.txt'
+git commit  -m "commit # XX of course notes date xx/xx/2020"
+git push 
+
+
+
+
+*********Data Science Methodology
+
+Business Understanding This stage is the most important because this is where the intention of the project is outlined. Foundational Methodology and CRISP-DM are aligned here. It requires communication and clarity. The difficulty here is that stakeholders have different objectives, biases, and modalities of relating information. They don’t all see the same things or in the same manner. Without clear, concise, and complete perspective of what the project goals are resources will be needlessly expended. 
+
+
+Data Understanding Data understanding relies on business understanding. Data is collected at this stage of the process. The understanding of what the business wants and needs will determine what data is collected, from what sources, and by what methods. CRISP-DM combines the stages of Data Requirements, Data Collection, and Data Understanding from the Foundational Methodology outline. 
+
+
+Data Preparation Once the data has been collected, it must be transformed into a useable subset unless it is determined that more data is needed. Once a dataset is chosen, it must then be checked for questionable, missing, or ambiguous cases. Data Preparation is common to CRISP-DM and Foundational Methodology. 
+
+
+Modeling Once prepared for use, the data must be expressed through whatever appropriate models, give meaningful insights, and hopefully new knowledge. This is the purpose of data mining: to create knowledge information that has meaning and utility. The use of models reveals patterns and structures within the data that provide insight into the features of interest. Models are selected on a portion of the data and adjustments are made if necessary. Model selection is an art and science. Both Foundational Methodology and CRISP-DM are required for the subsequent stage. 
+
+
+Evaluation The selected model must be tested. This is usually done by having a pre-selected test, set to run the trained model on. This will allow you to see the effectiveness of the model on a set it sees as new. Results from this are used to determine efficacy of the model and foreshadows its role in the next and final stage. 
+
+
+Deployment In the deployment step, the model is used on new data outside of the scope of the dataset and by new stakeholders. The new interactions at this phase might reveal the new variables and needs for the dataset and model. These new challenges could initiate revision of either business needs and actions, or the model and data, or both.
+
+
+
+The Methodology in a nutshell...
+
+
+From Problem to Approach:
+1. What is the problem you are trying to solve?
+2. How can you use data to answer the question?
+
+Working with  the data:
+3.what data do you need to answer?
+4.where is the data coming drom (identify all source) and how will you get it?
+5.is the data  the you collected representative of the problem to be solved?
+6.What adicional work is requierd to manipulate and work with the data?
+
+Deriving the naswer:
+7. In what way can the data be visualized to get to thhe answer that is requiered?
+8. Does the model used really answer the initial question or does it need to be adjusted?
+9. Can you put the model into practice?
+10. Can you get constructive into answering the question?
+
+
+
+
+
+
+
+
+
+
+
+
+Data Science Methodology aplicado a proyecto Coca Cola
+
+
+
+Business Understanding: Coca cola necesita vender mas en los comecios peque;os como pulperias a nivel nacional y la data que se necesita cocolectar para definir la necesidad del negocio en primera instancia es el comportamiento de los consumidores.
+
+Data Understanding : la data que se necesita colectar para tener un entendimiento de el comportamiento de los consumidores de define en 3 cararteristicas:
+
+Trafico
+estadia
+retorno
+
+Esta informacion se puede identificar y colectar utilizando antenas wifi en las zonas de interes (tiene que ser definido basado en los requerimientos de coca cola basado en las preguntas correectas realizadas en el procecso de Business Understanding) por un periodo de tiempo determinado (Business Understanding).
+
+Data Preparation:
+filtramos la data dejando solo la informacion el los data sets que coontenga datos que nos indiquen parametroos relacionados a usuarion (MAC Address, Beacons, probe messages).
+
+Modeling: 
+Modelamos la data por antena utilizando un modelo de prediccion como el de arbol de desiciones ya que nosotros ya tenemos el modelo de clasificacion que vamos a utilizar para definir el potencial del negocio basado en la mejor posibilidad de exito segun la info que sabemos que podemos colectar.
+
+
+Evaluation:
+Calificamos el establecimniento segun los parametros ya establecidos de clase A (Alto potencial de venta), clase B (mediano potencial de venta) y clase C (bajo potencial de venta).
+
+
+Deployment:
+definir la accion a tomar en cada uno de los negocios segun su clasificacion con una estrategia que permita colectar nuevos datos que puedan ser inyectados al modelo para luego ser re-evaluada con nueva informacion y ajustarlo para un resultado cada ez mas acertado.
+
+
+
+
+
+
+
+
+
+
+PROMPT
+Next, you will play the role of the client and the data scientist.
+
+Using the topic that you selected, complete the Business Understanding stage by coming up with a problem that you would like to solve and phrasing it in the form of a question that you will use data to answer. (3 marks)
+
+You are required to:
+
+Describe the problem, related to the topic you selected.
+Phrase the problem as a question to be answered using data.
+For example, using the food recipes use case discussed in the labs, the question that we defined was, "Can we automatically determine the cuisine of a given dish based on its ingredients?".
+
+
+
+
+
+I have a large database of my clients and I want to communicate information about promotions, I only have 3 product lines however I do not want to send the same email to all of my clients, rather I want to be able to send relevant information based on their interests.
+
+Will it be possible to send relevant information emails to correctly identified the clients based on the information I have about them or do I need more information?
+
+
+
+
+Analytic Approach: First thing will be trying to understand the customer business, knowing how much money and time they want to spend is important for setting the right customer expectations. For example , knowing that the customer has only 3 product lines, we know that the classification of clients has to be subject to these three product lines. This being the case, we have only three possibilities for classification , so the next step will be to create a data model using a prediction model such as the decision tree, which tells us in which of these three criteria we must classify the client using the information that is intended.
+
+Data Requirements: Understanding the client's product lines and talking with the expert in the matters, we should know if the classification can be carried out using the data we have, for example: gender, age and place of residence at the moment. Let's say that all information needs to be up to date, based on the requirement of the scope and that it is accessible to us by the customer. Also lets say that we have identified a possible pattern with public information we can collect such as weather.
+A good option where to find information will be for example asking the customer if it has other client databases such as purchases by the client. Let's say we know the customer has an up to date database of his clients collected during a recent marketing campaign but we need to make sure this database contains information relevant to the previously established classifications associated with the products sold by the customer. Another approach could be to make a plan on collecting any data that is not in the database to be obtained during a purchase as well as any other data required to complete the profile.
+
+Data Collection: Techniques such as descriptive statistics and visualization can be applied to the data set, to assess the content, quality, and initial insights about the data. Gaps in data will be identified and plans to either fill or make substitutions will have to be made.
+
+Data Understanding and Preparation: Visualizing the data, we will be able to realize if for example there are purchasing patterns where most consumers could live near the store while those who live far away do not buy as much.
+In a case like this we could adjust the data set to filtering customers by geographic area to reduce the number of customers in the list, this could be a good approach to reduce the number of clients to have a more accurate result.
+
+Modeling and Evaluation: Once the data set is prepared we can focus on an identified pattern. Let's say we have identified that there is a large percentage of sales being made during the weekends.  An option could be making an identification of night consumers during the weekends and then send emails to them with offers that can only be redeemed during the night and follow a control of exchange vs. notified customer to encourage sales in that schedule and confirm if sales increase.
