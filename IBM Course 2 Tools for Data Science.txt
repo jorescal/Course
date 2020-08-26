@@ -1,0 +1,197 @@
+cd ~/Desktop
+
+
+
+
+
+# First of all, create new Repo on Github
+
+cd ~/Desktop/Github2/GitReps/	# create a new directory on your computer
+mkdri Course			# every new directory needs to be create from the command line
+cd Course 
+
+
+
+git init
+git config --global user.email "jorescal@gmail.com"
+
+
+ls				# make sure you have the files you want to upload on the directory you are seeting
+
+
+echo "# Data Science Course" >> README.md
+git add README.md
+git commit  -m "first commit of course notes xx/xx/2020"
+
+
+
+git add 'IBM Course 2 Tools for Data Science.txt'
+git commit  -m "commit # upedate XX of course notes date xx/xx/2020"
+
+git remote add origin git@github.com:jorescal/Course.git
+git push -u origin master
+
+
+
+
+
+********** for every day update 
+
+
+cd ~/Desktop/Github2/GitReps/Course
+
+
+git add 'IBM Course 2 Tools for Data Science.txt'
+git commit  -m "commit # XX of course notes date xx/xx/2020"
+git push 
+
+
+
+
+*************
+IBM Course Assignment Notebook#
+
+
+This is an IBM Course Assignment Notebook to complete my Tools for Data Science Course.
+
+
+
+
+
+Cell 1 (rendered as Markdown): The title should be "My Jupyter Notebook on IBM Watson Studio", in H1 header styling. The title does not need to be centered.
+
+Example:
+
+
+# IBM Course Assignment Notebook # 
+
+
+Cell 2 (rendered as Markdown): Include your name, in bold characters. In the line below your name, write your current or desired occupation in regular font.
+
+Example:
+
+
+**Jorge Ivan Escalante Ch**
+
+Data Science Engineer
+
+
+Cell 3 (rendered as Markdown): In italic formatting, write one or two sentences about why you are interested in data science. For example, you can start your first sentence with "I am interested in data science because ...".
+
+
+Example:
+
+
+*I am interested in data science because ...*
+
+
+Cell 4 (rendered as Markdown): In H3 header styling, explain in a short sentence what your code is supposed to do in Cell 5.
+
+Example:
+
+### short sentence what your code is supposed to do... ###
+
+Cell 5 (code cell): Your code, as described in Cell 4. It must be executed and must display an output. Try to keep the code simple (it can even be "1 + 1").
+
+Example:
+
+1 + 1
+
+
+
+Cell 6 (rendered as Markdown): Using Markdown or HTML, this cell must include at least 3 of the following: horizontal rule, bulleted list, numbered list, tables, hyperlinks, images, code/syntax highlighting, blocked quotes, strikethrough.
+
+Example:
+
+
+<dl>
+    
+    
+    
+  <h2>This answers our question ???</h2>
+
+<hr style="width:50%;text-align:left;margin-left:0">
+    
+    
+    
+    
+  <dt>These are our possibilities</dt>
+
+<ul>
+  <li>chicken</li>
+  <li>egg </li>
+  <li>both</li>
+</ul>  
+
+
+    
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">   
+     
+    
+  <dt>This is our order of probabilities</dt>
+
+<ol>
+  <li>chicken egg both</li>
+  <li>egg chicken both</li>
+  <li>chicken both egg</li>
+</ol>   
+    
+    
+    
+<table border="1">
+   <tr>
+     <th>chicken</th>
+     <th>egg</th>
+   </tr>
+   <tr>
+     <td>0</td>
+     <td>1</td>
+   </tr>
+   <tr>
+     <td>1</td>
+     <td>0</td>
+   </tr>
+ </table>
+   
+    
+<h3>What do scientists think? Let's see in the following link</h3>
+
+<p><a href="https://youtu.be/QIy4hDB9KQE">What came first the chicken or the egg? This is the definitive answer</a></p>
+
+    
+<h4>Chicken or the egg (El huevo o la gallina)</h4>
+
+<img src="img_girl.jpg" alt="El huevo o la gallina" width="5000" height="6000">
+    
+  
+    
+    
+    
+
+<span style="background-color: #FFFF00">We are going to solve it ... !!!</span>  
+    
+        
+    
+<blockquote cite="http://www.worldwildlife.org/who/index.html">
+For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+</blockquote>
+    
+    
+<strike>Today's Special: Salmon</strike> WE WILL MAKE IT<br />
+
+    
+    
+    
+</dl>
+
+
+####
+
+https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/cd812017-3e11-4d31-a157-11bc290e9394/view?access_token=7ad04a41e3a816e8b6d1d38656cfae7c72608062f07a8475da432e5bc3fe1de8
+
+
+https://labs.cognitiveclass.ai/profile
+https://nbviewer.jupyter.org/
+https://github.com/jorescal/Github_commands/blob/master/github%20commands.txt
+
+
