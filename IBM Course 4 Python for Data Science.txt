@@ -48,14 +48,25 @@ git push
 
 
 
+**************************
+
+Glossary
 
 
-
-
-
-
-
-
+argument:
+List:
+Tuple:
+Variable:
+"=" vs ":" 
+operands:
+operators:
+expresion:
+compound data types vs data types:
+() vs []:
+float:
+int:
+bool:
+string:
 
 **************************
 
@@ -84,7 +95,8 @@ you could be lossing information.
 
 Expresions 
 
-45 + 5 + 9 = 59
+45 + 5 + 9 
+ 59
 
 
 
