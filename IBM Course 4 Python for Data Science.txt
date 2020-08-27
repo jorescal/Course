@@ -68,6 +68,20 @@ int:
 bool:
 string:
 
+.split()
+.append()
+
+del()
+len()
+
+
+
+A=((1),[2,3],[4])
+A[2][0]
+
+
+
+
 **************************
 
 
@@ -282,3 +296,88 @@ Every time we apply a method, the list changes.If we apply extend, we add two ne
 
 
 
+*** Dictionaries in Python
+
+To create a dictionary, we use curly brackets. The keys are the first elements. They must be immutable and unique. Each key is followed by a value separated by a colon. The values can be immutable, mutable, and duplicates. Each key and value pair is separated by a comma.
+
+Dict = {"key1": 1, "key2": "2", "key3": [3, 3, 3], "key4": (4, 4, 4), ('key5'): 5, (0, 1): 6}
+Dict
+
+{'key1': 1,
+ 'key2': '2',
+ 'key3': [3, 3, 3],
+ 'key4': (4, 4, 4),
+ 'key5': 5,
+ (0, 1): 6}
+
+
+For every key, there can only be one single value, Keys can only be strings, numbers, or tuples, but values can be any data type.
+
+
+
+Usfull commands
+
+
+"dict_Name"['key']		# returns the value of the specific key.
+
+"dict_Name".keys() 		# retrieve the keys of the dictionary using the method .keys(). 
+
+"dict_Name".values() 		# You can retrieve the values using the method .values().
+
+"dict_Name"['key'] = 'value'	# use this command to add a new key + value to the dic.
+
+del("dict_Name"['key'])		# use "del" to delete key inside dic.
+
+"Key" in dict_Name   		# use "in" to fis a value inside the dic. 
+
+
+
+Note
+
+	NO "" requiered for the "dict_Name"
+
+
+
+
+****** Set
+
+
+Set's are also a type of collection. Sets are a type of collection. This means that like lists and tuples, you can input different Python types. Unlike lists and tuples, they are unordered. This means sets do not record element position. Sets only have unique elements. This means there is only one of a particular element in a set. To define a set, you use curly brackets.
+
+
+
+set1 = {"pop", "rock", "soul", "hard rock", "rock", "R&B", "rock", "disco"}
+set1
+
+{'R&B', 'disco', 'hard rock', 'pop', 'rock', 'soul'}
+
+
+
+
+
+
+Usfull commands
+
+
+
+Data_set = set(Data_list)   		# To create a set from a list.
+
+Data_set.add("element")			# add an element to a set using the ".add()" method. 
+
+Data_set.remove("element")		# remove an item from a set using the "remove()" method. 
+
+"element" in Data_set			# verify if an element is in the set using the "in" command.
+
+intersection = Data_set1 & Data_set2	# You can find the intersect of two sets using "&".
+
+Data_set1.difference(Data_set2)		# You can find all the elements that are not shared betwen   
+	
+or 
+
+Data_set2.difference(Data_set1)		# Data set's using the ".difference()" method
+
+Data_set1.intersection(Data_set2)   	# You can also find the intersection elements betwen 2 sets using 					  		  the ".intersection()" method
+
+Data_set1.union(Data_set2)		# you can merge 2 sets elements by using the ".union()" method.
+
+set(Data_set1).issuperset(Data_set2)   	# you can check if a set is a superset or subset of another set, 					  		  respectively by using the ".issuperset()" method.
