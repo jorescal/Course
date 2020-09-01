@@ -709,6 +709,14 @@ for "index" in "range"
 print
 
 
+list [1,2,3]
+index value = list[0]
+
+while( index value == reference value to filter )
+	index value == index value + 1
+	newList.append (list[index value])
+	print (newList.append)
+print (end)
 
 
 ****************
