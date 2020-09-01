@@ -1,5 +1,10 @@
 cd ~/Desktop/IBM Course/Github2/GitReps/Course
 
+cd 'IBM Course'/Github2/GitReps/Course  
+
+
+
+
 
 
 
@@ -57,7 +62,7 @@ git push
 
 Glossary
 
-
+iterate: repetir
 argument:
 List:
 Tuple:
@@ -560,14 +565,42 @@ Before we discuss loops lets discuss the range object. It is helpful to think of
 range(3)
 
 
+If the input (in this case "3" ) is a positive integer, the output is a sequence ( 0 to 2 ). The sequence contains the same number of elements as the input but starts at zero.
 
-What is for loop?
+
+In the other hand If the range function has two inputs:
+
+
+
+range (10, 15) 
+
+
+Where the first input is larger than the second input, the output is a sequence that starts at the first input.  
+
+[10, 11, 12, 13, 14]
+
+
+LOOP
+
+
+What is for loop? 
 
 The for loop enables you to execute a code block multiple times.
 
 
 for i in range(0, 8):
     print(i)
+
+
+
+NOTE:
+
+we read:
+
+
+for  (i =  variable that define the index of a list during the loop ) in ("range range(0, 8)" the lengt of the list that will be created )
+
+print ("i")  --> print the index and increase on one starting from the reference gived on the range function "range range(0, 8)" 
 
 
 Output
@@ -661,3 +694,21 @@ while(year != 1973):			# while (0 not equal 1973), if "True" apply next line, if
     print(year)				# print(1982)
 
 print("It took ", i ,"repetitions to get out of loop.")
+
+
+
+****************
+
+
+if
+elif
+else
+print
+
+for "index" in "range"
+print
+
+
+
+
+****************
