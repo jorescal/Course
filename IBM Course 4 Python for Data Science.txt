@@ -770,3 +770,13 @@ caballo
 banano
 44
 44
+
+
+
+
+****************	   ****************	
+****************Class:
+
+
+
+Class isthe combination of an Objects (class type ) and Attributes
