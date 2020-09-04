@@ -1,7 +1,6 @@
-cd ~/Desktop/IBM Course/Github2/GitReps/Course
+ 
 
-cd 'IBM Course'/Github2/GitReps/Course  
-
+cd ~/Desktop/'IBM Course'/Github2/GitReps/Course
 
 
 
@@ -719,4 +718,55 @@ while( index value == reference value to filter )
 print (end)
 
 
-****************
+
+****************	   ****************	
+**************** Functions ****************
+
+
+
+Print Vs Return – Python Principles
+
+Printing and returning are completely different concepts. print is a function you call. Calling print will immediately make your program write out text for you to see. ... When a return statement is reached, Python will stop the execution of the current function, sending a value out to where the function was called.
+
+
+
+
+You can define functions to provide the required functionality. Here are simple rules to define a function in Python:
+
+Functions blocks begin def followed by the function name and parentheses ().
+There are input parameters or arguments that should be placed within these parentheses.
+You can also define parameters inside these parentheses.
+There is a body within every function that starts with a colon (:) and is indented.
+You can also place documentation before the body
+The statement return exits a function, optionally passing back a value
+An example of a function that adds on to the parameter a prints and returns the output as b:
+
+
+
+a = "caballo"
+b = "banano"
+
+def con(x, j):
+
+    print (x)
+    print (j)
+    c = 1
+    d = 43
+    return (c+d)
+
+
+# con(x, j)
+con(a, b)
+x = con(a, b)
+print(x)
+x
+
+
+Output
+
+caballo
+banano
+caballo
+banano
+44
+44
