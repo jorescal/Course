@@ -778,5 +778,233 @@ banano
 ****************Class:
 
 
+Class is the combination of objects (or as we called them Data type like int, fort, str, bool or even data collection types as toples, list, dictionaries and sets that will define the variables of the class or atributes ) and Methods ( that basically are functions inside a class that could contain conditions,branching, loops).
 
-Class isthe combination of an Objects (class type ) and Attributes
+
+A class is define as follow:
+
+
+Class + "name of the class" ("attributes")
+     def __init__ ( self, x, y)		# Constructor calles the function "__init__"
+           self.x = x
+           self.y = y
+
+
+
+
+Instances of a Class: an Instances of a Class is the result of appling atributes to a class.
+
+Example:
+
+Class CIRCULE (RADIO, COLOR):
+
+    # Constructor calles the function "__init__"
+     def __init__ ( self, x, y)
+           self.RADIO = RADIO
+           self.COLOR = COLOR
+
+
+    # Method
+    def add_radius(self, r):
+        self.radius = self.radius + r
+        return(self.radius)
+    
+    # Method
+    def drawCircle(self):
+        plt.gca().add_patch(plt.Circle((0, 0), radius=self.radius, fc=self.color))
+        plt.axis('scaled')
+        plt.show()  		.
+		.
+		.
+
+
+Blue_Circule = CIRCULE(9, azul)
+Blue_Circule
+
+Red_Circule = CIRCULE(6, rojo)
+Red_Circule
+
+Green_Circule = CIRCULE(6, verde)
+Green_Circule
+
+
+the result is three instances of the class circle or three objects of type circle.
+
+
+
+
+
+****************	   ****************	
+****************Methods
+
+
+
+
+Method updates a DATA TYPE through a function inside a Class define to apply new funtionalities tO this DATA TYPE and PROVIDES A  result based on the funtion applied.
+
+Note 
+Methos can only be invoked under a Class directory. The Class define the Methods available to apply on the DATA TYPE.
+
+
+We can use the dir command to get a list of the methods available for the variable. Many of them are default Python methods.
+
+Example:
+
+
+dir(RedCircle)
+
+
+
+
+****************	   ****************	
+****************Reading Files Python
+
+
+
+# Download Example file
+
+!wget -O /resources/data/Example1.txt https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/labs/example1.txt
+
+
+
+
+# Open file using with
+
+with open(example1, "r") as file1:
+    FileContent = file1.read()
+    print(FileContent)
+
+
+# Verify if the file is closed
+
+file1.closed
+
+
+
+# Display directory methods 
+
+dir (file1)
+
+
+
+# Test some of them
+
+
+file1.name
+file1.mode
+
+
+
+# See the content of file
+
+print(FileContent)
+
+
+
+
+# Read one line
+
+with open(example1, "r") as file1:
+    print("first line: " + file1.readline())
+
+
+
+# Iterate through the lines
+
+with open(example1,"r") as file1:
+        i = 0;
+        for line in file1:
+            print("Iteration", str(i), ": ", line)
+            i = i + 1;
+
+
+# Read all lines and save as a list
+
+with open(example1, "r") as file1:
+    FileasList = file1.readlines()
+
+
+
+
+
+
+****************	   ****************	
+****************Write and Save Files in Python
+
+
+
+# Write line to file
+
+with open('/resources/data/Example2.txt', 'w') as writefile:
+    writefile.write("This is line A")
+
+
+# Read file
+
+with open('/resources/data/Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+
+
+# Write a new line to text file
+
+with open('/resources/data/Example2.txt', 'a') as testwritefile:
+    testwritefile.write("This is line C\n")
+
+
+# Verify if the new line is in the text file
+
+with open('/resources/data/Example2.txt', 'r') as testwritefile:
+
+
+
+
+------------------------------We write a list to a .txt file, Append the line to the file and Copy the file with a new name as follows:
+
+
+# Sample list of text
+
+Lines = ["This is line A\n", "This is line B\n", "This is line C\n"]
+Lines
+
+
+# Write the strings in the list to text file
+
+with open('Example2.txt', 'w') as writefile:
+    for line in Lines:
+        print(line)
+        writefile.write(line)
+
+
+# Verify if writing to file is successfully executed
+
+with open('Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+    print(testwritefile.read())
+
+
+
+# Append the line to the file
+
+with open('Example2.txt', 'a') as testwritefile:
+    testwritefile.write("This is line D\n")
+
+
+# Verify if the appending is successfully executed
+
+with open('Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+
+
+
+# Copy file to another
+
+with open('Example2.txt','r') as readfile:
+    with open('Example3.txt','w') as writefile:
+          for line in readfile:
+                writefile.write(line)
+
+
+# Verify if the copy is successfully executed
+
+with open('Example3.txt','r') as testwritefile:
+    print(testwritefile.read())
