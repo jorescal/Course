@@ -1008,3 +1008,10 @@ with open('Example2.txt','r') as readfile:
 
 with open('Example3.txt','r') as testwritefile:
     print(testwritefile.read())
+
+
+
+
+
+
+
