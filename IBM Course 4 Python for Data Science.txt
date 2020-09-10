@@ -957,7 +957,7 @@ with open('/resources/data/Example2.txt', 'r') as testwritefile:
 
 
 
-
+------------------------------
 ------------------------------We write a list to a .txt file, Append the line to the file and Copy the file with a new name as follows:
 
 
@@ -1014,4 +1014,136 @@ with open('Example3.txt','r') as testwritefile:
 
 
 
+------------------------------
+------------------------------Use Pandas to access and view data
 
+
+Step 1
+Go to 
+
+https://cloud.ibm.com/services/data-science-experience/crn%3Av1%3Abluemix%3Apublic%3Adata-science-experience%3Aus-south%3Aa%2F5f7f38be6d174f0f90f73e3a671b0846%3Af7289fea-586a-45d7-aa08-3279ab5190ff%3A%3A?paneId=manage
+
+
+and click on get started.
+
+
+Step 2
+Select the proyect on the one you want to work and you need to add a Notebook to your project. Click Add to project.
+
+
+
+Step 3
+On the New Notebook page, enter a name for the notebook, and then click From URL.
+Copy this link:
+
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module 4/PY0101EN-4-3-LoadData.ipynb
+
+
+
+Step 4
+
+Inside the Notebook follow the next steps:
+
+
+
+
+# Dependency needed to install file 
+
+!pip install xlrd
+
+
+
+# Import required library
+
+import pandas as pd
+
+
+# Read data from CSV file
+
+csv_path = 'https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%204/Datasets/TopSellingAlbums.csv'
+df = pd.read_csv(csv_path)
+
+
+# Print first five rows of the dataframe
+
+df.head()
+
+
+
+# Read data from Excel File and print the first five rows
+
+xlsx_path = 'https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%204/Datasets/TopSellingAlbums.xlsx'
+
+df = pd.read_excel(xlsx_path)
+df.head()
+
+
+
+
+# Access to the column Length
+
+x = df[['Length']]
+x
+
+
+
+# Get the column as a series
+
+x = df['Length']
+x
+
+
+
+# Access to multiple columns
+
+y = df[['Artist','Length','Genre']]
+y
+
+
+df
+---------
+---------Using loc, iloc and ix with Pandas
+
+
+loc 
+loc is primarily label based; when two arguments are used, you use column headers and row indexes to select the data you want. loc can also take an integer as a row or column number.
+
+
+
+iloc 
+iloc is integer-based. You use column numbers and row numbers to get rows or columns at particular positions in the data frame. 
+
+
+ix
+By default, ix looks for a label. If ix doesn't find a label, it will use an integer. This means you can select data by using either column numbers and row numbers or column headers and row names using ix.
+
+
+
+
+# Access the value on the second row and the first column
+
+df.iloc[1,0]
+
+
+
+
+# Slicing the dataframe
+
+df.iloc[0:2, 0:3]
+
+
+
+# Slicing the dataframe using name
+
+df.loc[0:2, 'Artist':'Released']
+# Access the value on the first row and the third column
+
+df.iloc[0,2]
+
+
+# Access the column using the name
+
+df.loc[0, 'Artist']
+# Access the value on the first row and the first column
+
+df.iloc[0, 0]
