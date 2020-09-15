@@ -1147,3 +1147,10 @@ df.loc[0, 'Artist']
 # Access the value on the first row and the first column
 
 df.iloc[0, 0]
+
+
+
+
+
+---------
+---------  1D Numpy in Python
