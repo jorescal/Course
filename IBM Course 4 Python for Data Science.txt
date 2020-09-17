@@ -1253,3 +1253,19 @@ iAWTCpw7aelp7rUCSbpeIdnOdNh00081JrcwOBYoDkF0
 URL
 
 https://api.us-south.language-translator.watson.cloud.ibm.com/instances/c6adfdc3-6831-4968-887e-00e2100d6f8f
+
+
+
+
+
+
+
+---------
+---------  Analyzing US Economic Data and Building a Dashboard
+
+https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/e2702bff-3a9f-40c9-8a5b-2d588c1210ea/view?access_token=f8d3157ed7f7484525e7a4fa01c81634fffec521cbd54759f11da1e9e201f83b
+
+
+
+
+
