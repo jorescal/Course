@@ -1,5 +1,68 @@
+ 
+
+cd ~/Desktop/'IBM Course'/Github2/GitReps/Course
+
+
+
+
+
+
+
+# First of all, create new Repo on Github
+
+cd ~/Desktop/Github2/GitReps/	# create a new directory on your computer
+mkdri Course			# every new directory needs to be create from the command line
+cd Course 
+
+
+
+git init
+git config --global user.email "jorescal@gmail.com"
+
+
+ls				# make sure you have the files you want to upload on the directory you are seeting
+
+
+echo "# Data Science Course" >> README.md
+git add README.md
+git commit  -m "first commit of course notes xx/xx/2020"
+
+
+
+git add 'IBM Course 5 Databases and SQL for Data Science.txt'
+git add 'for_loops.ipynb'
+
+git commit  -m "commit # upedate XX of course notes date xx/xx/2020"
+
+for_loops.ipynb
+
+git remote add origin git@github.com:jorescal/Course.git
+git push -u origin master
+
+
+
+
+
+********** for every day update 
+
+
+cd ~/Desktop/Github2/GitReps/Course
+
+
+git add 'IBM Course 5 Databases and SQL for Data Science.txt'
+git add 'for_loops.ipynb'
+git commit  -m "commit # XX of course notes date xx/xx/2020"
+git push 
+
+
+
 
 
 
 Databases and SQL for Data Science
-Week 1
+
+
+
+When data is stored in tabular form, the data is organized in tables like in a spreadsheet, which is columns and rows. That's a relational database.
+
+A table is a collection of related things like a list of employees or a list of book authors. In a relational database, you can form relationships between tables.
