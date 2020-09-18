@@ -63,6 +63,46 @@ Databases and SQL for Data Science
 
 
 
-When data is stored in tabular form, the data is organized in tables like in a spreadsheet, which is columns and rows. That's a relational database.
+When data is stored in tabular form, the data is organized in tables like in a spreadsheet, which is columns and rows. That's a relational database.A table is a collection of related things like a list of employees or a list of book authors. In a relational database, you can form relationships between tables.
 
-A table is a collection of related things like a list of employees or a list of book authors. In a relational database, you can form relationships between tables.
+
+
+A relational database stores data in a tabular format - i.e. in rows and columns. But not all types of databases use the tabular format.
+
+
+
+We will discuss these 5 basic SQL queries in further detail in subsequent lessons:
+
+CREATE
+
+INSERT
+
+SELECT
+
+UPDATE
+
+DELETE
+
+
+
+
+* Data definition language or DDL statements are used to define, change, or drop data. 
+
+* Data manipulation language or DML statements are used to read and modify data.
+
+
+
+COUNT is a built-in database function that retrieves the number of rows that match the query criteria. select COUNT(*) from tablename. 
+
+DISTINCT is used to remove duplicate values from a result set.
+
+LIMIT is used for restricting the number of rows retrieved from the database. Example, retrieve just the first 10 rows in a table. Select * from tablename LIMIT 10. Select * from MEDALS where YEAR = 2018 LIMIT 5.
+
+
+
+
+
+
+
+
+
