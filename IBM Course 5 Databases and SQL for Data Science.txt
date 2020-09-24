@@ -86,9 +86,9 @@ DELETE
 
 
 
-* Data definition language or DDL statements are used to define, change, or drop data. 
+* Data definition language or DDL statements are used to define, change, or drop data. it is used to create objects. The functions used on DDL are CREATE, DROP (It is quite common to issue a DROP before doing a CREATE in test and development scenarios.), )
 
-* Data manipulation language or DML statements are used to read and modify data.
+* Data manipulation language or DML statements are used to read and modify data. functions used on DML are SELECT (The SELECT statement is called a query, and the output we get from executing this query is called a result set or a result table.),
 
 
 
@@ -97,6 +97,152 @@ COUNT is a built-in database function that retrieves the number of rows that mat
 DISTINCT is used to remove duplicate values from a result set.
 
 LIMIT is used for restricting the number of rows retrieved from the database. Example, retrieve just the first 10 rows in a table. Select * from tablename LIMIT 10. Select * from MEDALS where YEAR = 2018 LIMIT 5.
+
+
+
+
+
+***********************  Examples to CREATE and DROP tables.
+
+
+
+create a table:
+
+create table TABLENAME (
+    
+	COLUMN1 datatype,
+    
+	COLUMN2 datatype,
+    
+	COLUMN3 datatype,
+       
+	 ...
+    
+	) ;
+
+
+
+
+
+Example:
+	drop table COUNTRY;
+
+	create table COUNTRY (
+    
+	ID integer PRIMARY KEY NOT NULL,
+    
+	CCODE char(2),
+
+	NAME varchar(60)
+    
+	);
+
+
+*********************** SELECT statement examples
+
+
+How to use SELECT statement
+
+
+	select COLUMN1, COLUMN2, ... from TABLE1 ;
+
+
+
+
+
+Example:
+
+	select ID, NAME from COUNTRY ;
+
+
+To retrieve all columns from the COUNTRY table we could use "*" instead of specifying individual column names:
+
+	select * from COUNTRY ;
+
+
+
+The WHERE clause can be added to your query to filter results or get specific rows of data. To retrieve data for all rows in the COUNTRY table where the ID is less than 5:
+
+	select * from COUNTRY where ID < 5 ;
+
+
+In case of character based columns the values of the predicates in the where clause need to be enclosed in single quotes. To retrieve the data for the country with country code "CA" we would issue:
+
+	select * from COUNTRY where CCODE = 'CA'; 
+
+
+
+
+*********************** Expressions that are used with select statements (COUNT, DISTINCT, LIMIT,    ). 
+
+
+
+COUNT is a built-in database function that retrieves the number of rows that match the query criteria. For example, get the total number of rows in a given table: 
+
+
+	select COUNT(*) from tablename. 
+
+		OR
+
+	select DISTINCT (columnname) from tablename.
+
+		
+			example:Select COUNT(COUNTRY) from MEDALS 
+					where COUNTRY='CANADA.' 
+
+
+
+
+DISTINCT is used to remove duplicate values from a result set. Example, to retrieve unique values in a column, 
+
+
+
+	select DISTINCT (*) from tablename. 
+
+			OR
+
+	select DISTINCT (columnname) from tablename. 
+
+
+			example: select DISTINCT (COUNTRY) from MEDALS
+					where COUNTRY='CANADA.' 
+
+
+LIMIT is used for restricting the number of rows retrieved from the database. Example, retrieve just the first 10 rows in a table.
+
+ 
+	Select * from tablename LIMIT 10. 
+
+			example: Select * from MEDALS LIMIT 10. 
+
+
+
+*********************** INSERT statement (DML statements)
+
+The INSERT statement is used to add new rows to a table. The INSERT statement is one of the data manipulation language statements. Data manipulation language statements or DML statements are used to read and modify data.
+
+
+The syntax of the INSERT statement looks like this, 
+
+INSERT INTO "table name", 
+	(["column name", "column name", "column name", ...]), 
+	VALUES
+		(["A1", values, values, values, ...]),
+		(["A2", values, values, values, ...]),
+		...
+
+
+In this statement, table name identifies the table, the column name list identifies each column in the table, and the values clause specifies the data values to be added to the columns in the table. 
+
+
+
+
+
+
+
+
+
+
 
 
 
