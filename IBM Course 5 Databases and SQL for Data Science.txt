@@ -102,11 +102,13 @@ LIMIT is used for restricting the number of rows retrieved from the database. Ex
 
 
 
-***********************  Examples to CREATE and DROP tables.
+***********************  Examples to CREATE and DROP tables (DDL statement).
 
 
 
 create a table:
+
+drop table TABLENAME;
 
 create table TABLENAME (
     
@@ -125,20 +127,24 @@ create table TABLENAME (
 
 
 Example:
-	drop table COUNTRY;
+	DROP TABLE country;
 
-	create table COUNTRY (
+	CREATE TABLE country(
     
-	ID integer PRIMARY KEY NOT NULL,
+			id_Author INTEGER PRIMARY KEY (id_Author)NOT NULL,
     
-	CCODE char(2),
+			ccode CHAR(2),
 
-	NAME varchar(60)
+			name VARCHAR(60)
+ NOT NULL,
     
-	);
+			);
 
 
-*********************** SELECT statement examples
+
+
+
+*********************** The SELECT statement is called "query"( DML statement to read and modify ) 
 
 
 How to use SELECT statement
@@ -163,12 +169,21 @@ To retrieve all columns from the COUNTRY table we could use "*" instead of speci
 
 The WHERE clause can be added to your query to filter results or get specific rows of data. To retrieve data for all rows in the COUNTRY table where the ID is less than 5:
 
+
+
 	select * from COUNTRY where ID < 5 ;
+
+
+
 
 
 In case of character based columns the values of the predicates in the where clause need to be enclosed in single quotes. To retrieve the data for the country with country code "CA" we would issue:
 
 	select * from COUNTRY where CCODE = 'CA'; 
+
+		or
+
+	select (columnname) from tablename where columnname =  B1 ;
 
 
 
@@ -217,7 +232,13 @@ LIMIT is used for restricting the number of rows retrieved from the database. Ex
 
 
 
-*********************** INSERT statement (DML statements)
+
+
+
+
+*********************** INSERT statement ( DML statement to read and modify)
+
+
 
 The INSERT statement is used to add new rows to a table. The INSERT statement is one of the data manipulation language statements. Data manipulation language statements or DML statements are used to read and modify data.
 
@@ -239,13 +260,36 @@ In this statement, table name identifies the table, the column name list identif
 
 
 
+*********************** UPDATE statement and the DELETE statement ( DML statement to read and modify). 
 
 
 
+The syntax of the UPDATE statement looks like this, 
+
+
+	UPDATE [TableName] SET [ColumnName] = [Value] ]> <WHERE [Condition] >. 
+
+
+Example
+
+	
+	UPDATE author SET LasName = "katta" 
+		WHERE author_id = a2
 
 
 
+The rows are removed with the DELETE statement. The syntax of the DELETE statement looks like this, 
 
+
+	DELETE FROM [TABLEName] <WHERE [Condition] >
+
+Example
+
+	DELETE FROM author WHERE author_id IN ("A2", "A3")
+
+
+
+The rows to be removed are specified in the WHERE condition. Note that if you do not specify the WHERE clause, all the rows in the table will be removed. 
 
 
 
