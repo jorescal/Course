@@ -188,6 +188,8 @@ In case of character based columns the values of the predicates in the where cla
 
 
 
+
+
 *********************** Expressions that are used with select statements (COUNT, DISTINCT, LIMIT,    ). 
 
 
@@ -290,6 +292,47 @@ Example
 
 
 The rows to be removed are specified in the WHERE condition. Note that if you do not specify the WHERE clause, all the rows in the table will be removed. 
+
+
+
+
+
+
+***********************  Information and Data Models
+
+
+An information model is an abstract formal representation of entities that includes their properties, relationships, and the operations that can be performed on them. 
+
+
+
+Data models are defined in a more concrete level, are specific, and include details. A data model is the blueprint of any database system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
