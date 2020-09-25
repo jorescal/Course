@@ -283,7 +283,7 @@ Example
 The rows are removed with the DELETE statement. The syntax of the DELETE statement looks like this, 
 
 
-	DELETE FROM [TABLEName] <WHERE [Condition] >
+	DELETE FROM [TableName] <WHERE [Condition] >
 
 Example
 
@@ -301,11 +301,33 @@ The rows to be removed are specified in the WHERE condition. Note that if you do
 ***********************  Information and Data Models
 
 
-An information model is an abstract formal representation of entities that includes their properties, relationships, and the operations that can be performed on them. 
+Entities: Are a group of Tables.
+
+
+Atribute: Entities have attributes, which are the data elements that characterize the entity. Attributes tell us more about the entity. Entities can be a noun, person, place, or thing.
+
+
+ERD: stands for "Entity Relationship Diagram". It represents a collection of entities and their relationships. The building blocks of an ER diagram are entities and attributes. In an ER diagram, an entity is drawn as a rectangle, and attributes are drawn as ovals.
 
 
 
-Data models are defined in a more concrete level, are specific, and include details. A data model is the blueprint of any database system.
+
+
+ER model: stands for "Entity Relationship model" and it is used as a tool to design relational databases. In the ER model, entities are objects that exist independently of any other entities in the database. 
+
+
+
+
+INFORMATION MODEL	 is an abstract formal representation of entities that includes their properties, relationships, and the operations that can be performed on them. The most familiar is the hierarchical, typically used to show organization charts. 
+
+
+
+DATA MODELS 		are defined in a more concrete level, are specific, and include details. A data model is the blueprint of any database system. 
+
+
+
+		NOTE 
+		The relational model is the most used data model for databases, because this model allows for data 		independence. Data is stored in simple data structure tables. This provides logical data independence, physical 		data independence, and physical storage independence. 
 
 
 
