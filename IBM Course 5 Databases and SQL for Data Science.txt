@@ -351,20 +351,34 @@ https://dev.to/helenanders26/entity-relationship-diagrams-explained-by-sonic-the
 
 
 
-***********************  mapping entities to tables.
+***********************  Relational Model Concepts. Relational terms, relation, degree and cardinality,
+
+
+relation: The building blocks of the relational model are relation and sets. A relation is a mathematical concept based on the idea of sets. 
+
+
+
+Set: A set is an unordered collection of distinct elements. It is a collection of items of the same type.  It would have no order and no duplicates.  
 
 
 
 
+difference between a relational schema and a relational instance. 
+
+
+
+* A relational schema is the relation betwen the "Entities" and their corresponding "Atributes". specifies the name of a relation (colum name example "Author_ ID", "lastname", "firstname", etc...) and the attributes (data type that can be a char, varchar, etc...). 
+
+
+* A relational instance is are the table "VALUES" made up of the attributes or columns and the tuples or rows.
 
 
 
 
+Degree: refers to number of attributes or "COLUMNS" in a relation.
 
 
-
-
-
+Cardinality: refers to the number of tuples or "ROWS" in a relation..
 
 
 
