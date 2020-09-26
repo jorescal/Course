@@ -375,10 +375,10 @@ difference between a relational schema and a relational instance.
 
 
 
-Degree: refers to number of attributes or "COLUMNS" in a relation.
+Degree: degree is a number and it refers to number of attributes or "COLUMNS" in a relation.
 
 
-Cardinality: refers to the number of tuples or "ROWS" in a relation..
+Cardinality: Cardinality is a number and it refers to the number of tuples or "ROWS" in a relation..
 
 
 
