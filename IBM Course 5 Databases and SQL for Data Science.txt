@@ -334,12 +334,24 @@ DATA MODELS 		are defined in a more concrete level, are specific, and include de
 
 
 
+***********************  types of relationships.
+
+
+The building blocks of a relationship are: entities, relationship sets, and crows foot notations. Some "crows foot notations" are the greater than symbol, the less than symbol and a vertical line. 
+ 
+
+Entity sets are represented by a rectangle. Relationship sets are represented by a diamond, with lines connecting associated entities and the corresponding "crows foot notations" relationship symbole in betwen. 
+
+
+
+https://dev.to/helenanders26/entity-relationship-diagrams-explained-by-sonic-the-hedgehog-1m68
 
 
 
 
 
 
+***********************  mapping entities to tables.
 
 
 
