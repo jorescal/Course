@@ -351,10 +351,10 @@ https://dev.to/helenanders26/entity-relationship-diagrams-explained-by-sonic-the
 
 
 
-***********************  Relational Model Concepts. Relational terms, relation, degree and cardinality,
+***********************  Relational Model Concepts. ( terms, relation, degree and cardinality ).
 
 
-relation: The building blocks of the relational model are relation and sets. A relation is a mathematical concept based on the idea of sets. 
+Relation: The building blocks of the relational model are relation and sets. A relation is a mathematical concept based on the idea of sets. 
 
 
 
