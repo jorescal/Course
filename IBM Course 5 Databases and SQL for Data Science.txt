@@ -86,17 +86,17 @@ DELETE
 
 
 
-* Data definition language or DDL statements are used to define, change, or drop data. it is used to create objects. The functions used on DDL are CREATE, DROP (It is quite common to issue a DROP before doing a CREATE in test and development scenarios.), )
+* Data definition language or DDL statements are used to define, change, or drop data. it is used to create objects. The functions used on DDL are CREATE, DROP (It is quite common to issue a DROP before doing a CREATE in test and development scenarios.).
 
-* Data manipulation language or DML statements are used to read and modify data. functions used on DML are SELECT (The SELECT statement is called a query, and the output we get from executing this query is called a result set or a result table.),
+* Data manipulation language or DML statements are used to read and modify data. functions used on DML are SELECT (The SELECT statement is called a query, and the output we get from executing this query is called a result set or a result table.).
 
 
 
-COUNT is a built-in database function that retrieves the number of rows that match the query criteria. select COUNT(*) from tablename. 
+COUNT is a built-in database function that retrieves the number of rows that match the query criteria. select COUNT(*) from "tablename". 
 
 DISTINCT is used to remove duplicate values from a result set.
 
-LIMIT is used for restricting the number of rows retrieved from the database. Example, retrieve just the first 10 rows in a table. Select * from tablename LIMIT 10. Select * from MEDALS where YEAR = 2018 LIMIT 5.
+LIMIT is used for restricting the number of rows retrieved from the database. Example, retrieve just the first 10 rows in a table. Select * from "tablename" LIMIT 10. Select * from MEDALS where YEAR = 2018 LIMIT 5.
 
 
 
@@ -183,7 +183,7 @@ In case of character based columns the values of the predicates in the where cla
 
 		or
 
-	select (columnname) from tablename where columnname =  B1 ;
+	select ("columnname") from "tablename" where "columnname" =  "B1" ;
 
 
 
@@ -197,11 +197,11 @@ In case of character based columns the values of the predicates in the where cla
 COUNT is a built-in database function that retrieves the number of rows that match the query criteria. For example, get the total number of rows in a given table: 
 
 
-	select COUNT(*) from tablename. 
+	select COUNT(*) from "tablename". 
 
 		OR
 
-	select DISTINCT (columnname) from tablename.
+	select DISTINCT ("columnname") from "tablename"
 
 		
 			example:Select COUNT(COUNTRY) from MEDALS 
@@ -228,7 +228,7 @@ DISTINCT is used to remove duplicate values from a result set. Example, to retri
 LIMIT is used for restricting the number of rows retrieved from the database. Example, retrieve just the first 10 rows in a table.
 
  
-	Select * from tablename LIMIT 10. 
+	Select * from tablename LIMIT XX. 
 
 			example: Select * from MEDALS LIMIT 10. 
 
@@ -327,7 +327,7 @@ DATA MODELS 		are defined in a more concrete level, are specific, and include de
 
 
 		NOTE 
-		The relational model is the most used data model for databases, because this model allows for data 		independence. Data is stored in simple data structure tables. This provides logical data independence, physical 		data independence, and physical storage independence. 
+		The relational model is the most used data model for databases, because this model allows for data independence. Data is stored in simple data structure tables. This provides logical data independence, physical data independence, and physical storage independence. 
 
 
 
@@ -370,15 +370,15 @@ difference between a relational schema and a relational instance.
 * A relational schema is the relation betwen the "Entities" and their corresponding "Atributes". specifies the name of a relation (colum name example "Author_ ID", "lastname", "firstname", etc...) and the attributes (data type that can be a char, varchar, etc...). 
 
 
-* A relational instance is are the table "VALUES" made up of the attributes or columns and the tuples or rows.
+* A relational instance are the table "VALUES" made up of the attributes or columns and the tuples or rows.
 
 
 
+ 
+Degree: degree is a number and it refers to position of attributes or "COLUMNS element" in a relation.
 
-Degree: degree is a number and it refers to number of attributes or "COLUMNS" in a relation.
 
-
-Cardinality: Cardinality is a number and it refers to the number of tuples or "ROWS" in a relation..
+Cardinality: Cardinality is a number and it refers to the position of the tuples or "ROWS element" in a relation..
 
 
 
