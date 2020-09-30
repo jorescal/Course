@@ -515,7 +515,7 @@ department.
 
 
 
-select  DEP_ID, COUNT(*) from EMPLOYEES GROUP BY DEP_ID
+select DEP_ID, COUNT(*) from EMPLOYEES GROUP BY DEP_ID
 
 
 
@@ -523,6 +523,55 @@ select  DEP_ID, COUNT(*) from EMPLOYEES GROUP BY DEP_ID
 https://www.w3resource.com/sql/aggregate-functions/count-function.php#:~:text=The%20SQL%20COUNT()%20function,there%20were%20no%20matching%20rows.&text=The%20above%20syntax%20is%20the%20general%20SQL%202003%20ANSI%20standard%20syntax.
 
 
+
+
+
+***  SQL COUNT(), AVG() and SUM() Functions
+
+
+
+SELECT AVG(column_name)
+FROM table_name
+WHERE condition;
+
+
+
+Query 5B: For each department retrieve the number of employees in the
+department, and the average employees salary in the department.
+SELECT DEP_ID, COUNT(*), AVG(SALARY) FROM EMPLOYEES GROUP BY DEP_ID
+
+
+
+https://www.w3schools.com/sql/sql_count_avg_sum.asp#:~:text=The%20SQL%20COUNT()%2C%20AVG,value%20of%20a%20numeric%20column.
+
+
+
+
+
+
+***   SQL AS Keyword
+
+
+SELECT CustomerID AS ID, CustomerName AS Customer
+FROM Customers;
+
+
+
+
+Query 5C: Label the computed columns in the result set of Query 5B as “NUM_EMPLOYEES” and “AVG_SALARY”.
+
+
+
+
+
+https://www.w3schools.com/sql/sql_ref_as.asp
+“NUM_EMPLOYEES” and “AVG_SALARY”.
+
+
+
+
+
+https://github.com/jorescal/Course/blob/master/LAB%20String%20Patterns%20Sorting%20%26%20Grouping.pdf
 
 
 
