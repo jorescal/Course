@@ -401,7 +401,7 @@ Cardinality: Cardinality is a number and it refers to the position of the tuples
 *********************** LAB: String Patterns, Sorting & Grouping
 
 
- = 
+
 
 *** SQL LIKE Operator
 
@@ -649,6 +649,36 @@ https://www.w3schools.com/sql/sql_having.asp
 
 
 
+
+
+
+***  SQL Aliases
+
+
+
+BONUS 
+
+
+
+SELECT o.OrderID, o.OrderDate, c.CustomerName
+FROM Customers AS c, Orders AS o
+WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
+
+
+
+		Query 6: Similar to 4B but instead of department ID use department name. Retrieve a list of employees ordered by department name, and within each department ordered alphabetically in descending order by last name.
+
+
+
+
+SELECT D.DEP_NAME, E.L_NAME 
+FROM EMPLOYEES AS E, DEPARTMENTS AS D
+WHERE E. DEP_ID  = D.DEPT_ID_DEP
+ORDER BY D.DEP_NAME, E.L_NAME DESC;
+
+
+
+https://www.w3schools.com/sql/sql_alias.asp#:~:text=SQL%20aliases%20are%20used%20to,the%20duration%20of%20the%20query.
 
 
 
