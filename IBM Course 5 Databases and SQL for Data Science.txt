@@ -963,3 +963,27 @@ Select *
 	where E.DEP_ID = D.DEPT_ID_DEP; 
 
 
+
+
+
+
+
+
+
+
+
+**************  Relational Model Constraints
+
+
+Within any business, data must often adhere to certain restrictions or rules. Constraints help implement the business rules. In a relational data model, data integrity can be achieved using integrity rules or constraints.
+
+There are  six constraints in a relational database model. 
+
+entity integrity constraint,
+referential integrity constraint,
+semantic integrity constraint,
+domain constraint, 
+null constraint,
+and check constraint. 
+
+Constraints help implement the business rules.
