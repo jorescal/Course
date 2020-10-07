@@ -59,7 +59,8 @@ git push
 
 
 
-Databases and SQL for Data Science
+
+*********************** Week 1  - Databases and SQL for Data Science
 
 
 
@@ -442,9 +443,9 @@ https://www.w3schools.com/sql/sql_like.asp#:~:text=The%20SQL%20LIKE%20Operator,z
 *** SQL BETWEEN Operator
 
 
-SELECT column1, column2, ...
+SELECT column_name(s)
 FROM table_name
-WHERE columnN LIKE pattern;
+WHERE column_name BETWEEN value1 AND value2;
 
 
 
@@ -453,14 +454,15 @@ WHERE columnN LIKE pattern;
 		Query 3: Retrieve all employees in department 5 whose salary is between 60000 and 70000.
 
 
-select F_NAME, L_NAME  from  EMPLOYEES 
-where DEP_ID  = 5 and SALARY BETWEEN 60000 and 70000
+select F_NAME, L_NAME  
+from  EMPLOYEES 
+where DEP_ID  = 5 and 
+SALARY BETWEEN 60000 and 70000
 
 
 
 
-https://www.w3schools.com/sql/sql_like.asp#:~:text=The%20SQL%20LIKE%20Operator,zero%2C%20one%2C%20or%20multiple%20characters
-
+https://www.w3schools.com/sql/sql_between.asp
 
 
 
@@ -477,7 +479,9 @@ ORDER BY column1, column2, ... ASC|DESC;
 
 		Query 4A: Retrieve a list of employees ordered by department ID.
 
-select * from  EMPLOYEES ORDER BY DEP_ID ASC;
+
+select * from  EMPLOYEES 
+ORDER BY DEP_ID ASC;
 
 
 
@@ -497,7 +501,8 @@ https://www.w3schools.com/sql/sql_orderby.asp#:~:text=The%20SQL%20ORDER%20BY%20K
 
 
 
-*** SQL COUNT() function
+*** SQL COUNT() function and GROUP BY Syntax
+
 
 
 COUNT(*)
@@ -510,6 +515,17 @@ COUNT( [ALL|DISTINCT] expression )
 		OR
 
 	select DISTINCT ("columnname") from "tablename"
+
+
+And
+
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+
 
 
 
@@ -690,6 +706,260 @@ https://github.com/jorescal/Course/blob/master/LAB%20String%20Patterns%20Sorting
 
 
 
+*********************** Built-in Database Functions
 
+
+
+An aggregate function takes a collection of light values, such as all of the values in a column, as input, and returns a single value or null.Examples of aggregate functions include: sum, minimum, maximum, and average.
+
+
+
+
+*****  Scalar functions perform operations on individual values. 
+
+
+For example, 
+
+	round up or down every value in the sale price column to the nearest integer, is shown as: 
+
+
+select ROUND (SALEPRICE) from PETSALE 
+
+
+
+
+
+
+
+*****  Uppercase and lowercase functions can be used to return uppercase or lowercase values of strings. 
+
+For example: 
+
+	retrieve animal values in uppercase is shown as: 
+
+select UCASE (ANIMAL) from PETSALE
+
+
+
+	or example, get lowercase values of the animal column for cat, is shown as: 
+
+select * from PETSALE where LCASE(ANIMAL) = "cat" 
+
+
+
+
+
+
+***** You can also have one function operate on the output of another function. 
+
+For example, 
+
+		get unique values for the animal column and uppercase is shown as: 
+
+
+select DISTINCT (UCASE(ANIMAL)) from PETSALE 
+
+
+
+
+
+* Functions exist to extract the day, month, day of month, day of week, day of year, week, hour, minute, and second.
+
+
+
+*****  The day function can be used to extract the day portion from a date. 
+
+For example, 
+
+
+	get the day portion for each sale date involving cat- is shown as, 
+
+
+select DAY (SALEDATE) from PETSALE where ANIMAL = "cat"
+
+
+
+
+	get the number of sales during the month of May, ie from Month 5- is shown as, 
+
+
+select COUNT(*) from PETSALE where MONTH (SALEDATE) = 05
+
+
+
+
+	what date is it three days after each sale date? 
+
+
+select (SALEDATE + 3 DAYS) from PETSALE 
+
+
+
+
+	find how many days have passed since each sale date till now- is shown as, 
+
+select (CURRENT_DATE - SALEDATE) from PETSALE 
+
+ 
+
+
+
+
+*********************** Writing sub-queries or nested selects statements.
+
+
+
+
+	retrieve the list of employees who earn more than the average salary. 
+
+
+
+***** sub-select expression
+
+
+
+* ERROR *
+
+Select * 
+	from employees 
+	where salary > AVG(salary).
+
+
+
+* CORRECT *
+
+Select EMP_ID, F_NAME, L_NAME, SALARY 
+	from employees 
+	where SALARY < ( select AVG (SALARY) from employees)
+
+
+
+
+
+
+
+*****  column expression.
+
+
+
+* ERROR *
+
+select EMP_ID, SALARY, AVG(SALARY) AS AVG_SALARY 
+	from employees.
+
+
+
+* CORRECT *
+
+
+select EMP_ID, SALARY, (select AVG(SALARY) from employees ) AS AVG_SALARY 
+	from employees
+
+
+
+
+
+
+
+
+
+*****  sub-query as part of the FROM clause (derived tables or table expressions). 
+
+
+Select * from (select EMP_ID, F_NAME, L_NAME, DEP_ID 
+		from employees) AS EMP4ALL
+
+
+
+The derived table in a sub-query does not include sensitive fields like date of birth or salary.
+
+
+Note
+
+One of the limitations of built in aggregate functions, like the average function, is that they cannot always be evaluated in the WHERE clause.
+
+
+
+
+
+
+
+
+
+
+
+
+
+*********************** Working with Multiple Tables
+
+
+
+Select * 
+	from employee, 
+	where department_ID IN
+		(select department_ID_department from departments);
+
+
+Here the outer query accesses the employees table and the sub-query on the departments table is used for filtering the result set of the outer query.
+
+
+
+
+
+Select * 
+	from employee, 
+	where department_ID IN 
+		(select department_ID_department 
+			from departments 
+			where location ID = L0002 
+
+
+
+Here we retrieved only the list of employees from a specific location. We do not have any location information in the employees table, but the departments table has a column called location ID. Therefore, we can use a sub-query from the Departments table as input to the employee table query.
+
+
+
+
+
+
+Select department_ID_department department_name 
+	from department 
+	where department_ID_department IN
+		(select department_ID 
+			from employees 
+			where salary > 70,000;
+
+
+
+
+Here we retrieve the department ID and department name for employees who earn more than $70,000
+
+
+
+
+
+
+
+
+
+
+
+**************  SIMPLIFIED QUERY FOR MULTUPLE TABLES ****************
+
+
+
+Select * 
+	from employees, departments
+	where employees.DEP_ID = departments.DEPT_ID_DEP; 
+
+
+
+
+** SHORTER QUERY 
+
+
+Select * 
+	from employees E, departments D 
+	where E.DEP_ID = D.DEPT_ID_DEP; 
 
 
