@@ -43,6 +43,17 @@ git push -u origin master
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ********** for every day update 
 
 
@@ -60,11 +71,20 @@ git push
 
 
 
+
+
+
+
+
+
+
+
+
 *********************** Week 1  - Databases and SQL for Data Science
 
 
 
-When data is stored in tabular form, the data is organized in tables like in a spreadsheet, which is columns and rows. That's a relational database.A table is a collection of related things like a list of employees or a list of book authors. In a relational database, you can form relationships between tables.
+When data is stored in tabular form, the data is organized in tables like in a spreadsheet, which are columns and rows. That's a relational database.A table is a collection of related things like a list of employees or a list of book authors. In a relational database, you can form relationships between tables.
 
 
 
@@ -98,6 +118,17 @@ COUNT is a built-in database function that retrieves the number of rows that mat
 DISTINCT is used to remove duplicate values from a result set.
 
 LIMIT is used for restricting the number of rows retrieved from the database. Example, retrieve just the first 10 rows in a table. Select * from "tablename" LIMIT 10. Select * from MEDALS where YEAR = 2018 LIMIT 5.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -140,6 +171,16 @@ Example:
  NOT NULL,
     
 			);
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -191,7 +232,17 @@ In case of character based columns the values of the predicates in the where cla
 
 
 
-*********************** Expressions that are used with select statements (COUNT, DISTINCT, LIMIT,    ). 
+
+
+
+
+
+
+
+
+
+
+*********************** Expressions that are used with "select" statements (COUNT, DISTINCT, LIMIT,    ). 
 
 
 
@@ -239,6 +290,14 @@ LIMIT is used for restricting the number of rows retrieved from the database. Ex
 
 
 
+
+
+
+
+
+
+
+
 *********************** INSERT statement ( DML statement to read and modify)
 
 
@@ -248,15 +307,24 @@ The INSERT statement is used to add new rows to a table. The INSERT statement is
 
 The syntax of the INSERT statement looks like this, 
 
-INSERT INTO "table name", 
-	(["column name", "column name", "column name", ...]), 
-	VALUES
-		(["A1", values, values, values, ...]),
-		(["A2", values, values, values, ...]),
-		...
+	INSERT INTO "table name", 
+		(["column name", "column name", "column name", ...]), 
+		VALUES
+			(["A1", values, values, values, ...]),
+			(["A2", values, values, values, ...]),
+			...
 
 
 In this statement, table name identifies the table, the column name list identifies each column in the table, and the values clause specifies the data values to be added to the columns in the table. 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -299,6 +367,15 @@ The rows to be removed are specified in the WHERE condition. Note that if you do
 
 
 
+
+
+
+
+
+
+
+
+
 ***********************  Information and Data Models
 
 
@@ -335,6 +412,15 @@ DATA MODELS 		are defined in a more concrete level, are specific, and include de
 
 
 
+
+
+
+
+
+
+
+
+
 ***********************  types of relationships.
 
 
@@ -346,6 +432,15 @@ Entity sets are represented by a rectangle. Relationship sets are represented by
 
 
 https://dev.to/helenanders26/entity-relationship-diagrams-explained-by-sonic-the-hedgehog-1m68
+
+
+
+
+
+
+
+
+
 
 
 
@@ -393,13 +488,9 @@ Cardinality: Cardinality is a number and it refers to the position of the tuples
 
 
 
-*********************** Week 2 - Databases and SQL for Data Science
+*********************** Week 2 - Databases and SQL for Data Science ***********************
 
-
-
-
-
-*********************** LAB: String Patterns, Sorting & Grouping
+*********************** LAB: String Patterns, Sorting & Grouping ***********************
 
 
 
@@ -419,8 +510,8 @@ WHERE columnN LIKE pattern;
 		Query 1: Retrieve all employees whose address is in Elgin,IL
 
 
-select F_NAME, L_NAME  from  EMPLOYEES 
-where ADDRESS LIKE '%Elgin,IL'; 
+	select F_NAME, L_NAME  from  EMPLOYEES 
+	where ADDRESS LIKE '%Elgin,IL'; 
 
 
 
@@ -454,10 +545,10 @@ WHERE column_name BETWEEN value1 AND value2;
 		Query 3: Retrieve all employees in department 5 whose salary is between 60000 and 70000.
 
 
-select F_NAME, L_NAME  
-from  EMPLOYEES 
-where DEP_ID  = 5 and 
-SALARY BETWEEN 60000 and 70000
+	select F_NAME, L_NAME  
+	from  EMPLOYEES 
+	where DEP_ID  = 5 and 
+	SALARY BETWEEN 60000 and 70000
 
 
 
@@ -475,13 +566,22 @@ SELECT column1, column2, ...
 FROM table_name
 ORDER BY column1, column2, ... ASC|DESC;
 
+And
+
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+
 
 
 		Query 4A: Retrieve a list of employees ordered by department ID.
 
 
-select * from  EMPLOYEES 
-ORDER BY DEP_ID ASC;
+	select * from  EMPLOYEES 
+	ORDER BY DEP_ID ASC;
 
 
 
@@ -489,8 +589,8 @@ ORDER BY DEP_ID ASC;
 
 
 
-select * from  EMPLOYEES 
-ORDER BY DEP_ID DESC and BY L_NAME DESC;
+	select * from  EMPLOYEES 
+	ORDER BY DEP_ID DESC and BY L_NAME DESC;
 
 
 
@@ -517,14 +617,6 @@ COUNT( [ALL|DISTINCT] expression )
 	select DISTINCT ("columnname") from "tablename"
 
 
-And
-
-
-SELECT column_name(s)
-FROM table_name
-WHERE condition
-GROUP BY column_name(s)
-ORDER BY column_name(s);
 
 
 
@@ -532,14 +624,13 @@ ORDER BY column_name(s);
 		Query 5A: For each department ID retrieve the number of employees in the department.
 
 
-select DEP_ID, COUNT(*) from EMPLOYEES 
-GROUP BY DEP_ID
+	select DEP_ID, COUNT(*) from EMPLOYEES 
+	GROUP BY DEP_ID
 
 
 
 
-https://www.w3resource.com/sql/aggregate-functions/count-function.php#:~:text=The%20SQL%20COUNT()%20function,there%20were%20no%20matching%20rows.&text=The%20above%20syntax%20is%20the%20general%20SQL%202003%20ANSI%20standard%20syntax.
-
+https://www.w3schools.com/sql/sql_count_avg_sum.asp
 
 
 
@@ -557,9 +648,9 @@ WHERE condition;
 		Query 5B: For each department retrieve the number of employees in the department, and the average employees salary in the department.
 
 
-SELECT DEP_ID, COUNT(*), AVG(SALARY) 
-FROM EMPLOYEES 
-GROUP BY DEP_ID
+	SELECT DEP_ID, COUNT(*), AVG(SALARY) 
+	FROM EMPLOYEES 
+	GROUP BY DEP_ID
 
 
 
@@ -576,7 +667,7 @@ https://www.w3schools.com/sql/sql_count_avg_sum.asp#:~:text=The%20SQL%20COUNT()%
 
 
 SELECT CustomerID AS ID, CustomerName AS Customer
-FROM Customers;
+FROM Table;
 
 
 
@@ -584,9 +675,9 @@ FROM Customers;
 		Query 5C: Label the computed columns in the result set of Query 5B as “NUM_EMPLOYEES” and “AVG_SALARY”.
 
 
-SELECT DEP_ID, COUNT(*) AS NUM_EMPLOYEES, AVG(SALARY) AS AVG_SALARY 
-FROM EMPLOYEES 
-GROUP BY DEP_ID
+	SELECT DEP_ID, COUNT(*) AS NUM_EMPLOYEES, AVG(SALARY) AS AVG_SALARY 
+	FROM EMPLOYEES 
+	GROUP BY DEP_ID
 
 
 
@@ -614,10 +705,10 @@ ORDER BY column1, column2, ... ASC|DESC;
 
 
 
-SELECT DEP_ID, COUNT(*) AS NUM_EMPLOYEES, AVG(SALARY) AS AVG_SALARY 
-FROM EMPLOYEES 
-GROUP BY DEP_ID 
-ORDER BY AVG(SALARY)
+	SELECT DEP_ID, COUNT(*) AS NUM_EMPLOYEES, AVG(SALARY) AS AVG_SALARY 
+	FROM EMPLOYEES 
+	GROUP BY DEP_ID 
+	ORDER BY AVG(SALARY)
 
 
 
@@ -651,11 +742,11 @@ ORDER BY column_name(s);
 
 
 
-SELECT DEP_ID, COUNT(*) AS NUM_EMPLOYEES, AVG(SALARY) AS AVG_SALARY 
-FROM EMPLOYEES 
-GROUP BY DEP_ID 
-HAVING COUNT(DEP_ID) < 5 
-ORDER BY AVG(SALARY);
+	SELECT DEP_ID, COUNT(*) AS NUM_EMPLOYEES, AVG(SALARY) AS AVG_SALARY 
+	FROM EMPLOYEES 
+	GROUP BY DEP_ID 
+	HAVING COUNT(DEP_ID) < 5 
+	ORDER BY AVG(SALARY);
 
 
 
@@ -687,10 +778,10 @@ WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
 
 
 
-SELECT D.DEP_NAME, E.L_NAME 
-FROM EMPLOYEES AS E, DEPARTMENTS AS D
-WHERE E. DEP_ID  = D.DEPT_ID_DEP
-ORDER BY D.DEP_NAME, E.L_NAME DESC;
+	SELECT D.DEP_NAME, E.L_NAME 
+	FROM EMPLOYEES AS E, DEPARTMENTS AS D
+	WHERE E. DEP_ID  = D.DEPT_ID_DEP
+	ORDER BY D.DEP_NAME, E.L_NAME DESC;
 
 
 
@@ -701,6 +792,14 @@ https://www.w3schools.com/sql/sql_alias.asp#:~:text=SQL%20aliases%20are%20used%2
 
 
 https://github.com/jorescal/Course/blob/master/LAB%20String%20Patterns%20Sorting%20%26%20Grouping.pdf
+
+
+
+
+
+
+
+
 
 
 
@@ -731,9 +830,16 @@ select ROUND (SALEPRICE) from PETSALE
 
 
 
+
+
+
+
+
+
 *****  Uppercase and lowercase functions can be used to return uppercase or lowercase values of strings. 
 
 For example: 
+
 
 	retrieve animal values in uppercase is shown as: 
 
@@ -744,6 +850,13 @@ select UCASE (ANIMAL) from PETSALE
 	or example, get lowercase values of the animal column for cat, is shown as: 
 
 select * from PETSALE where LCASE(ANIMAL) = "cat" 
+
+
+
+
+
+
+
 
 
 
@@ -763,7 +876,14 @@ select DISTINCT (UCASE(ANIMAL)) from PETSALE
 
 
 
-* Functions exist to extract the day, month, day of month, day of week, day of year, week, hour, minute, and second.
+
+
+
+
+
+
+
+********** Functions exist to extract the day, month, day of month, day of week, day of year, week, hour, minute, and second. *****
 
 
 
@@ -922,7 +1042,7 @@ Here we retrieved only the list of employees from a specific location. We do not
 
 
 
-Select department_ID_department department_name 
+Select department_ID_department, department_name 
 	from department 
 	where department_ID_department IN
 		(select department_ID 
@@ -979,12 +1099,12 @@ Within any business, data must often adhere to certain restrictions or rules. Co
 
 There are  six constraints in a relational database model. 
 
-entity integrity constraint,
-referential integrity constraint,
-semantic integrity constraint,
-domain constraint, 
-null constraint,
-and check constraint. 
+	* entity integrity constraint,
+	* referential integrity constraint,
+	* semantic integrity constraint,
+	* domain constraint, 
+	* null constraint,
+	* check constraint. 
 
 Constraints help implement the business rules.
 
@@ -1076,25 +1196,27 @@ import ibm_db
 #Replace the placeholder values with the actuals for your Db2 Service Credentials
 
 # dsn_driver = "{IBM DB2 ODBC DRIVER}"
-# dsn_database = "BLUDB"            # e.g. "BLUDB"
-# dsn_hostname = "dashdb-txn-sbox-yp-dal09-08.services.dal.bluemix.net"            # e.g.: "dashdb-txn-sbox-yp-dal09-# 04.services.dal.bluemix.net"
-# dsn_port = "50000"                # e.g. "50000" 
-# dsn_protocol = "TCPIP"            # i.e. "TCPIP"
-# dsn_uid = "cxw75041"              # e.g. "abc12345"
-# dsn_pwd = "8sqk@2r838wc6g7b"      # e.g. "7dBZ3wWt9XN6$o0J"
+# dsn_database = "BLUDB"            						# e.g. "BLUDB"
+# dsn_hostname = "dashdb-txn-sbox-yp-dal09-08.services.dal.bluemix.net"         # e.g.: "dashdb-txn-sbox-yp-dal09-# 04.services.dal.bluemix.net"
+# dsn_port = "50000"                						# e.g. "50000" 
+# dsn_protocol = "TCPIP"            						# i.e. "TCPIP"
+# dsn_uid = "cxw75041"              						# e.g. "abc12345"
+# dsn_pwd = "8sqk@2r838wc6g7b"      						# e.g. "7dBZ3wWt9XN6$o0J"
 
 
 
 
+		*************	My Lab Case	*************	  
 
-dsn_hostname = "YourDb2Hostname" # e.g.: "dashdb-txn-sbox-yp-dal09-04.services.dal.bluemix.net"
-dsn_uid = "YourDb2Username"        # e.g. "abc12345"
-dsn_pwd = "YoueDb2Password"      # e.g. "7dBZ3wWt9XN6$o0J"
+
+dsn_hostname = "YourDb2Hostname" 	# e.g.: "dashdb-txn-sbox-yp-dal09-04.services.dal.bluemix.net"
+dsn_uid = "YourDb2Username"        	# e.g. "abc12345"
+dsn_pwd = "YoueDb2Password"      	# e.g. "7dBZ3wWt9XN6$o0J"
 
 dsn_driver = "{IBM DB2 ODBC DRIVER}"
-dsn_database = "BLUDB"            # e.g. "BLUDB"
-dsn_port = "50000"                # e.g. "50000" 
-dsn_protocol = "TCPIP"            # i.e. "TCPIP"
+dsn_database = "BLUDB"            	# e.g. "BLUDB"
+dsn_port = "50000"                	# e.g. "50000" 
+dsn_protocol = "TCPIP"            	# i.e. "TCPIP"
 
 
 
@@ -1192,19 +1314,25 @@ print ("CONN_CODEPAGE:        ", client.CONN_CODEPAGE)
 
 
 
-*** Task 4: Create a table in the database
 
 
-# Step A - Lets first drop the table INSTRUCTOR in case it exists from a previous attempt
+
+
+*** TASK 4: Create a table in the database using Python
+
+
+	# Step A - Lets first drop the table INSTRUCTOR in case it exists from a previous attempt
 
 dropQuery = "drop table INSTRUCTOR"
 
 
 
 
-    #Now execute the drop statment
+    	#Now execute the drop statment
 
 dropStmt = ibm_db.exec_immediate(conn, dropQuery)
+
+
 
 
 
@@ -1214,17 +1342,26 @@ dropStmt = ibm_db.exec_immediate(conn, dropQuery)
 
 
 
-#  Step B - Construct the Create Table DDL statement - replace the ... with rest of the statement
+
+	#  Step B - Construct the Create Table DDL statement - replace the ... with rest of the statement
 
 
 
-    #createQuery = "create table INSTRUCTOR(id INTEGER PRIMARY KEY NOT NULL, fname ...)"
-    #Now fill in the name of the method and execute the statement
-    #createStmt = ibm_db.replace_with_name_of_execution_method(conn, createQuery)
+    	# CreateQuery = "create table INSTRUCTOR(id INTEGER PRIMARY KEY NOT NULL, fname ...)"
+
+   	# Now fill in the name of the method and execute the statement
+
+    	# CreateStmt = ibm_db.replace_with_name_of_execution_method(conn, createQuery)
 
 
 
-createQuery = "create table INSTRUCTOR(ID INTEGER PRIMARY KEY NOT NULL, FNAME VARCHAR(20), LNAME VARCHAR(20), CITY VARCHAR(20), CCODE CHAR(2))"
+createQuery = "create table INSTRUCTOR(ID INTEGER PRIMARY KEY NOT NULL, 
+		FNAME VARCHAR(20), 
+		LNAME VARCHAR(20), 
+		CITY VARCHAR(20), 
+		CCODE CHAR(2))"
+
+
 
 createStmt = ibm_db.exec_immediate(conn,createQuery)
 
@@ -1232,50 +1369,88 @@ createStmt = ibm_db.exec_immediate(conn,createQuery)
 
 
 
-*** Task 5: Insert data into the table
-
-
-insertQuery = "insert into INSTRUCTOR values (1, 'Rav', 'Ahuja', 'TORONTO', 'CA')"
-
-insertStmt = ibm_db.exec_immediate(conn, insertQuery)
 
 
 
-# Now use a single query to insert the remaining two rows of data
+*** TASK 5: Insert data into the table using Python
 
 
-insertQuery2 = "insert into INSTRUCTOR values (2, 'Raul', 'Chong', 'Markham', 'CA'), (3, 'Hima', 'Vasudevan', 'Chicago', 'US')"
-
-insertStmt2 = ibm_db.exec_immediate(conn, insertQuery2)
-
-
-
-
-*** Task 6: Query data in the table
+insertQuery = "insert into INSTRUCTOR values 	(1, 
+						'Rav', 
+						'Ahuja', 
+						'TORONTO', 
+						'CA')"
 
 
-	#Construct the query that retrieves all rows from the INSTRUCTOR table
+insertStmt = ibm_db.exec_immediate (conn, insertQuery)
+
+
+
+	# Now use a single query to insert the remaining two rows of data
+
+
+insertQuery2 = "insert into INSTRUCTOR values 	(2, 
+						'Raul', 
+						'Chong', 
+						'Markham', 
+						'CA'), 
+
+						(3, 
+						'Hima', 
+						'Vasudevan', 
+						'Chicago', 
+						'US')"
+
+
+insertStmt2 = ibm_db.exec_immediate (conn, insertQuery2)
+
+
+
+
+
+
+
+
+*** TASK 6: Query data in the table using Python
+
+
+
+
+
+	# Construct the query that retrieves all rows from the INSTRUCTOR table
 
 selectQuery = "select * from INSTRUCTOR"
 
-	#Execute the statement
+
+
+
+
+	# Execute the statement
 
 selectStmt = ibm_db.exec_immediate(conn, selectQuery)
 
 
 
-	#Fetch the Dictionary (for the first row only) 
+
+
+	# Fetch the Dictionary (for the first row only * ) 
 
 ibm_db.fetch_both(selectStmt)
 
 
-	#Fetch the rest of the rows and print the ID and FNAME for those rows
+
+
+
+	# Fetch the rest of the rows and print the ID and FNAME for those rows
 
 while ibm_db.fetch_row(selectStmt) != False:
    print (" ID:",  ibm_db.result(selectStmt, 0), " FNAME:",  ibm_db.result(selectStmt, "FNAME"))
 
 
-	#now write and execute an update statement that changes the Rav's CITY to MOOSETOWN		
+
+
+
+	# now write and execute an update statement that changes the Rav's CITY to MOOSETOWN ( UPDATE [TableName] SET [ColumnName] = [Value] ]> <WHERE [Condition] > ). 	
 
 updateQuery = "update INSTRUCTOR set CITY='MOOSETOWN' where FNAME='Rav'"
 updateStmt = ibm_db.exec_immediate(conn, updateQuery))
@@ -1283,39 +1458,63 @@ updateStmt = ibm_db.exec_immediate(conn, updateQuery))
 
 
 
-*** Task 7: Retrieve data into Pandas
+
+
+
+
+
+*** TASK 7: Retrieve data into Pandas
 
 
 import pandas
 import ibm_db_dbi
 
 
-	#connection for pandas
+
+
+
+	# connection for pandas
 
 pconn = ibm_db_dbi.Connection(conn)
 
 
-	#query statement to retrieve all rows in INSTRUCTOR table
+
+
+
+
+	# query statement to retrieve all rows in INSTRUCTOR table
 
 selectQuery = "select * from INSTRUCTOR"
 
-	#retrieve the query results into a pandas dataframe
+
+
+
+
+	# retrieve the query results into a pandas dataframe
 
 pdf = pandas.read_sql(selectQuery, pconn)
 
-	#print just the LNAME for first row in the pandas data frame
+
+
+
+
+	# print just the LNAME for first row in the pandas data frame
 
 pdf.LNAME[0]
 
 
 
-	#print the entire data frame
+
+
+	# print the entire data frame
 pdf
 
-	#Once the data is in a Pandas dataframe, you can do the typical pandas operations on it.
-	#For example you can use the shape method to see how many rows and columns are in the dataframe`
+	# Once the data is in a Pandas dataframe, you can do the typical pandas operations on it.
+	# For example you can use the shape method to see how many rows and columns are in the dataframe`
 
 pdf.shape
+
+
 
 
 
@@ -1333,7 +1532,10 @@ ibm_db.close(conn)
 
 **************** 	Accessing Databases with SQL Magic	**************** 	
 
-To communicate with SQL Databases from within a JupyterLab notebook, we can use the SQL "magic" provided by the ipython-sql extension. "Magic" is JupyterLab's term for special commands that start with "%". Below, we'll use the load___ext magic to load the ipython-sql extension.
+
+
+
+	# To communicate with SQL Databases from within a JupyterLab notebook, we can use the SQL "magic" provided by the ipython-sql extension. "Magic" is JupyterLab's term for special commands 		# that start with "%". Below, we'll use the load___ext magic to load the ipython-sql extension.
 
 
 
@@ -1342,7 +1544,10 @@ To communicate with SQL Databases from within a JupyterLab notebook, we can use 
 
 
 
-retrieve or create your credentials ""uri":" to access your Db2 database.
+	# retrieve or create your credentials "uri":" to access your Db2 database.
+
+
+
 
 {
   "db": "BLUDB",
@@ -1387,109 +1592,113 @@ CREATE TABLE INTERNATIONAL_STUDENT_TEST_SCORES (
 	country VARCHAR(50),
 	first_name VARCHAR(50),
 	last_name VARCHAR(50),
-	test_score INT
-);
+	test_score INT);
+
+
+
+
+
 INSERT INTO INTERNATIONAL_STUDENT_TEST_SCORES (country, first_name, last_name, test_score)
-VALUES
-('United States', 'Marshall', 'Bernadot', 54),
-('Ghana', 'Celinda', 'Malkin', 51),
-('Ukraine', 'Guillermo', 'Furze', 53),
-('Greece', 'Aharon', 'Tunnow', 48),
-('Russia', 'Bail', 'Goodwin', 46),
-('Poland', 'Cole', 'Winteringham', 49),
-('Sweden', 'Emlyn', 'Erricker', 55),
-('Russia', 'Cathee', 'Sivewright', 49),
-('China', 'Barny', 'Ingerson', 57),
-('Uganda', 'Sharla', 'Papaccio', 55),
-('China', 'Stella', 'Youens', 51),
-('Poland', 'Julio', 'Buesden', 48),
-('United States', 'Tiffie', 'Cosely', 58),
-('Poland', 'Auroora', 'Stiffell', 45),
-('China', 'Clarita', 'Huet', 52),
-('Poland', 'Shannon', 'Goulden', 45),
-('Philippines', 'Emylee', 'Privost', 50),
-('France', 'Madelina', 'Burk', 49),
-('China', 'Saunderson', 'Root', 58),
-('Indonesia', 'Bo', 'Waring', 55),
-('China', 'Hollis', 'Domotor', 45),
-('Russia', 'Robbie', 'Collip', 46),
-('Philippines', 'Davon', 'Donisi', 46),
-('China', 'Cristabel', 'Radeliffe', 48),
-('China', 'Wallis', 'Bartleet', 58),
-('Moldova', 'Arleen', 'Stailey', 38),
-('Ireland', 'Mendel', 'Grumble', 58),
-('China', 'Sallyann', 'Exley', 51),
-('Mexico', 'Kain', 'Swaite', 46),
-('Indonesia', 'Alonso', 'Bulteel', 45),
-('Armenia', 'Anatol', 'Tankus', 51),
-('Indonesia', 'Coralyn', 'Dawkins', 48),
-('China', 'Deanne', 'Edwinson', 45),
-('China', 'Georgiana', 'Epple', 51),
-('Portugal', 'Bartlet', 'Breese', 56),
-('Azerbaijan', 'Idalina', 'Lukash', 50),
-('France', 'Livvie', 'Flory', 54),
-('Malaysia', 'Nonie', 'Borit', 48),
-('Indonesia', 'Clio', 'Mugg', 47),
-('Brazil', 'Westley', 'Measor', 48),
-('Philippines', 'Katrinka', 'Sibbert', 51),
-('Poland', 'Valentia', 'Mounch', 50),
-('Norway', 'Sheilah', 'Hedditch', 53),
-('Papua New Guinea', 'Itch', 'Jubb', 50),
-('Latvia', 'Stesha', 'Garnson', 53),
-('Canada', 'Cristionna', 'Wadmore', 46),
-('China', 'Lianna', 'Gatward', 43),
-('Guatemala', 'Tanney', 'Vials', 48),
-('France', 'Alma', 'Zavittieri', 44),
-('China', 'Alvira', 'Tamas', 50),
-('United States', 'Shanon', 'Peres', 45),
-('Sweden', 'Maisey', 'Lynas', 53),
-('Indonesia', 'Kip', 'Hothersall', 46),
-('China', 'Cash', 'Landis', 48),
-('Panama', 'Kennith', 'Digance', 45),
-('China', 'Ulberto', 'Riggeard', 48),
-('Switzerland', 'Judy', 'Gilligan', 49),
-('Philippines', 'Tod', 'Trevaskus', 52),
-('Brazil', 'Herold', 'Heggs', 44),
-('Latvia', 'Verney', 'Note', 50),
-('Poland', 'Temp', 'Ribey', 50),
-('China', 'Conroy', 'Egdal', 48),
-('Japan', 'Gabie', 'Alessandone', 47),
-('Ukraine', 'Devlen', 'Chaperlin', 54),
-('France', 'Babbette', 'Turner', 51),
-('Czech Republic', 'Virgil', 'Scotney', 52),
-('Tajikistan', 'Zorina', 'Bedow', 49),
-('China', 'Aidan', 'Rudeyeard', 50),
-('Ireland', 'Saunder', 'MacLice', 48),
-('France', 'Waly', 'Brunstan', 53),
-('China', 'Gisele', 'Enns', 52),
-('Peru', 'Mina', 'Winchester', 48),
-('Japan', 'Torie', 'MacShirrie', 50),
-('Russia', 'Benjamen', 'Kenford', 51),
-('China', 'Etan', 'Burn', 53),
-('Russia', 'Merralee', 'Chaperlin', 38),
-('Indonesia', 'Lanny', 'Malam', 49),
-('Canada', 'Wilhelm', 'Deeprose', 54),
-('Czech Republic', 'Lari', 'Hillhouse', 48),
-('China', 'Ossie', 'Woodley', 52),
-('Macedonia', 'April', 'Tyer', 50),
-('Vietnam', 'Madelon', 'Dansey', 53),
-('Ukraine', 'Korella', 'McNamee', 52),
-('Jamaica', 'Linnea', 'Cannam', 43),
-('China', 'Mart', 'Coling', 52),
-('Indonesia', 'Marna', 'Causbey', 47),
-('China', 'Berni', 'Daintier', 55),
-('Poland', 'Cynthia', 'Hassell', 49),
-('Canada', 'Carma', 'Schule', 49),
-('Indonesia', 'Malia', 'Blight', 48),
-('China', 'Paulo', 'Seivertsen', 47),
-('Niger', 'Kaylee', 'Hearley', 54),
-('Japan', 'Maure', 'Jandak', 46),
-('Argentina', 'Foss', 'Feavers', 45),
-('Venezuela', 'Ron', 'Leggitt', 60),
-('Russia', 'Flint', 'Gokes', 40),
-('China', 'Linet', 'Conelly', 52),
-('Philippines', 'Nikolas', 'Birtwell', 57),
-('Australia', 'Eduard', 'Leipelt', 53)
+					VALUES
+					('United States', 'Marshall', 'Bernadot', 54),
+					('Ghana', 'Celinda', 'Malkin', 51),
+					('Ukraine', 'Guillermo', 'Furze', 53),
+					('Greece', 'Aharon', 'Tunnow', 48),
+					('Russia', 'Bail', 'Goodwin', 46),
+					('Poland', 'Cole', 'Winteringham', 49),
+					('Sweden', 'Emlyn', 'Erricker', 55),
+					('Russia', 'Cathee', 'Sivewright', 49),
+					('China', 'Barny', 'Ingerson', 57),
+					('Uganda', 'Sharla', 'Papaccio', 55),
+					('China', 'Stella', 'Youens', 51),
+					('Poland', 'Julio', 'Buesden', 48),
+					('United States', 'Tiffie', 'Cosely', 58),
+					('Poland', 'Auroora', 'Stiffell', 45),
+					('China', 'Clarita', 'Huet', 52),
+					('Poland', 'Shannon', 'Goulden', 45),
+					('Philippines', 'Emylee', 'Privost', 50),
+					('France', 'Madelina', 'Burk', 49),
+					('China', 'Saunderson', 'Root', 58),
+					('Indonesia', 'Bo', 'Waring', 55),
+					('China', 'Hollis', 'Domotor', 45),
+					('Russia', 'Robbie', 'Collip', 46),
+					('Philippines', 'Davon', 'Donisi', 46),
+					('China', 'Cristabel', 'Radeliffe', 48),
+					('China', 'Wallis', 'Bartleet', 58),
+					('Moldova', 'Arleen', 'Stailey', 38),
+					('Ireland', 'Mendel', 'Grumble', 58),
+					('China', 'Sallyann', 'Exley', 51),
+					('Mexico', 'Kain', 'Swaite', 46),
+					('Indonesia', 'Alonso', 'Bulteel', 45),
+					('Armenia', 'Anatol', 'Tankus', 51),
+					('Indonesia', 'Coralyn', 'Dawkins', 48),
+					('China', 'Deanne', 'Edwinson', 45),
+					('China', 'Georgiana', 'Epple', 51),
+					('Portugal', 'Bartlet', 'Breese', 56),
+					('Azerbaijan', 'Idalina', 'Lukash', 50),
+					('France', 'Livvie', 'Flory', 54),
+					('Malaysia', 'Nonie', 'Borit', 48),
+					('Indonesia', 'Clio', 'Mugg', 47),
+					('Brazil', 'Westley', 'Measor', 48),
+					('Philippines', 'Katrinka', 'Sibbert', 51),
+					('Poland', 'Valentia', 'Mounch', 50),
+					('Norway', 'Sheilah', 'Hedditch', 53),
+					('Papua New Guinea', 'Itch', 'Jubb', 50),
+					('Latvia', 'Stesha', 'Garnson', 53),
+					('Canada', 'Cristionna', 'Wadmore', 46),
+					('China', 'Lianna', 'Gatward', 43),
+					('Guatemala', 'Tanney', 'Vials', 48),
+					('France', 'Alma', 'Zavittieri', 44),
+					('China', 'Alvira', 'Tamas', 50),
+					('United States', 'Shanon', 'Peres', 45),
+					('Sweden', 'Maisey', 'Lynas', 53),
+					('Indonesia', 'Kip', 'Hothersall', 46),
+					('China', 'Cash', 'Landis', 48),
+					('Panama', 'Kennith', 'Digance', 45),
+					('China', 'Ulberto', 'Riggeard', 48),
+					('Switzerland', 'Judy', 'Gilligan', 49),
+					('Philippines', 'Tod', 'Trevaskus', 52),
+					('Brazil', 'Herold', 'Heggs', 44),
+					('Latvia', 'Verney', 'Note', 50),
+					('Poland', 'Temp', 'Ribey', 50),
+					('China', 'Conroy', 'Egdal', 48),
+					('Japan', 'Gabie', 'Alessandone', 47),
+					('Ukraine', 'Devlen', 'Chaperlin', 54),
+					('France', 'Babbette', 'Turner', 51),
+					('Czech Republic', 'Virgil', 'Scotney', 52),
+					('Tajikistan', 'Zorina', 'Bedow', 49),
+					('China', 'Aidan', 'Rudeyeard', 50),
+					('Ireland', 'Saunder', 'MacLice', 48),
+					('France', 'Waly', 'Brunstan', 53),
+					('China', 'Gisele', 'Enns', 52),
+					('Peru', 'Mina', 'Winchester', 48),
+					('Japan', 'Torie', 'MacShirrie', 50),
+					('Russia', 'Benjamen', 'Kenford', 51),
+					('China', 'Etan', 'Burn', 53),
+					('Russia', 'Merralee', 'Chaperlin', 38),
+					('Indonesia', 'Lanny', 'Malam', 49),
+					('Canada', 'Wilhelm', 'Deeprose', 54),
+					('Czech Republic', 'Lari', 'Hillhouse', 48),
+					('China', 'Ossie', 'Woodley', 52),
+					('Macedonia', 'April', 'Tyer', 50),
+					('Vietnam', 'Madelon', 'Dansey', 53),
+					('Ukraine', 'Korella', 'McNamee', 52),
+					('Jamaica', 'Linnea', 'Cannam', 43),
+					('China', 'Mart', 'Coling', 52),
+					('Indonesia', 'Marna', 'Causbey', 47),
+					('China', 'Berni', 'Daintier', 55),
+					('Poland', 'Cynthia', 'Hassell', 49),
+					('Canada', 'Carma', 'Schule', 49),
+					('Indonesia', 'Malia', 'Blight', 48),
+					('China', 'Paulo', 'Seivertsen', 47),
+					('Niger', 'Kaylee', 'Hearley', 54),
+					('Japan', 'Maure', 'Jandak', 46),
+					('Argentina', 'Foss', 'Feavers', 45),
+					('Venezuela', 'Ron', 'Leggitt', 60),
+					('Russia', 'Flint', 'Gokes', 40),
+					('China', 'Linet', 'Conelly', 52),
+					('Philippines', 'Nikolas', 'Birtwell', 57),
+					('Australia', 'Eduard', 'Leipelt', 53)
 
 
 
@@ -1576,6 +1785,8 @@ Test Score	Frequency
 
 dataframe = test_score_distribution.DataFrame()
 
+
+
 %matplotlib inline
 
 	# uncomment the following line if you get an module error saying seaborn not found
@@ -1593,12 +1804,38 @@ plot = seaborn.barplot(x='Test Score',y='Frequency', data=dataframe)
 
 
 
-*** *** *** *** *** QUERYS TO PULL DATA TABLES INFORMATION ***  *** *** *** *** 
 
 
-	# TO KNOW TABLE NAMES ON A Db2 DATA BASE RUNN  THE FOLLOWING COMMAND 
+
+
+*** *** *** *** *** Load CSV files into IBM DB2 database *** *** *** *** *** 
+
+
+
+
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/FinalModule_SKO/Reading_Loading_Data.md.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** *** *** *** *** QUERYS TO PULL DATA TABLES INFORMATION FROM YOUR IBM CLOUD DATA BASE ***  *** *** *** *** 
+
+
+	# TO KNOW TABLE NAMES ON A Db2 DATA BASE RUNN  THE FOLLOWING COMMAND (YOU NEED TO FIND THE "username" CREDENTIAL ON YOUR dB2 STORAGE, IN THIS CASE IT IS "username": "cxw75041")
 
 %sql select TABSCHEMA, TABNAME, CREATE_TIME from SYSCAT.TABLES where TABSCHEMA='cxw75041'
+
+
+
 
 
 	# TO FIND THE TABLES THAT INCLUDE COLUM NAME = TO..."DOG":
@@ -1617,9 +1854,15 @@ or
 
 
 
-*** *** *** *** ***Read data from a CSV files and load it into database
 
 
 
 
-https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/FinalModule_SKO/Reading_Loading_Data.md.html
+
+
+
+
+
+
+
+
