@@ -84,4 +84,164 @@ git push
 
 
 
-*********************** Week 1  -
+*********************** Week 1  - Python Packages for Data Science
+
+
+
+We have divided the Python data analysis libraries into three groups.
+
+
+
+	Scientific computing libraries
+
+
+
+
+* Pandas : The primary instrument of Pandas is the two dimensional table consisting of column and row labels, which are called a data frame. 
+
+
+
+* NumPy: uses arrays for its inputs and outputs. 
+
+
+
+* SciPy: includes functions for some advanced math problems as well as data visualization.
+
+
+
+
+
+
+	data visualization methods
+
+
+
+* Matplotlib package: is the most well known library for data visualization. 
+
+* Seaborn: It is based on Matplotlib. It's very easy to generate various plots such as heat maps, time series and violin plots.
+
+
+
+
+
+
+
+	machine learning algorithms
+
+
+
+* Scikit-learn library: contains tools statistical modeling, including regression, classification, clustering, and so on. This library is built on NumPy, SciPy and Matplotib. 
+
+
+
+* Statsmodels: is also a Python module that allows users to explore data, estimate statistical models, and perform statistical tests.
+
+
+
+
+
+
+*** *** *** *** read any data using python's pandas package. 
+
+
+
+
+
+
+	#from the command line run the following commannds 
+
+
+import pandas as pd
+url = "https://onc/it.com/admin/conta.csv"    #specify the url where the data frame is located
+df = pd.read_csv*(url)
+
+
+
+
+
+
+	# if the data frame does not have a header run the following command
+
+df = pd.read_csv (url, header - None)
+
+
+
+
+
+
+	# Print (n) row from the data frame (n = the number of row from top to bottom)
+
+df.head(10)		# 10 = the number of row from top to bottom
+df.tail(13)		# 13 = the number of row from top to bottom
+
+
+
+	
+
+
+	# Assdign colum names 
+
+
+headers = ["brand", "fuel", "shift", "Price" ]
+df.columns = headers
+df.head(5)
+
+
+
+
+
+	# Export data fram to new csv file\
+
+path = "C/windows/.../cars.csv"
+df.to_csv(path)
+
+
+
+
+
+
+	# check for Data types
+
+df.dtypes
+
+
+
+
+
+	# Summary for all columns 
+
+df.describe(include = "all")
+
+	# And
+
+df.info()
+
+
+
+
+
+
+
+*** *** *** *** Accessing Databases with Python
+
+
+You use connection objects to connect to a database and manage your transactions. 
+
+
+Cursor objects are used to run queries. Cursors are used to scan through the results of a database.
+
+
+
+Here are the methods used with connection objects. 
+
+* The cursor() method returns a new cursor object using the connection. 
+
+* The commit() method is used to commit any pending transaction to the database. 
+
+* The rollback() method causes the database to roll back to the start of any pending transaction.
+
+* The close() method is used to close a database connection. 
+
+
+
+
