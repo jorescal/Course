@@ -482,13 +482,16 @@ df[['price','body-style']].groupby(['body-style'],as_index= False).mean()
 ### Transform the table to a pivot table that has one variable displayed along the columns and the other variable displayed along the rows.
 
 
-????
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html
+
 
 
 ### visualize using a heat map plot...Heat map takes a rectangular grid of data and assigns a color intensity based on the data value at the grid points. 
 
 
-????
+https://seaborn.pydata.org/generated/seaborn.heatmap.html
+
+https://matplotlib.org/3.1.1/gallery/images_contours_and_fields/image_annotated_heatmap.html
 
 
 
