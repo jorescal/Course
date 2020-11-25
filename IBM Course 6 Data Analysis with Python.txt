@@ -441,6 +441,12 @@ drive_wheels_counts
 
 
 
+
+
+
+
+
+
 ### Examplecode segment to generate Box plots :
 
 
@@ -449,7 +455,15 @@ sns.boxplot(x="car-style", y="price", data=df)
 
 
 
-### visualize this is using a scatter plot. Each observation in the scatter plot is represented as a point. This plot shows the relationship between two variables. The predictor variable, is the variable that you are using to predict an outcome.In a scatter plot, we typically set the predictor variable on the x-axis or horizontal axis, and we set the target variable on the y-axis or vertical axis.
+### visualize this is using a scatter plot. Each observation in the scatter plot is represented as a point. This plot shows the relationship between two variables. 
+
+The predictor variable, is the variable that you are using to predict an outcome.In a scatter plot, we typically set the predictor variable on the x-axis or horizontal axis, and we set the target variable on the y-axis or vertical axis.
+
+
+
+* predictor / independent variable / x-axis or horizontal axis
+* target / dependent variable / y-axis or vertical axis
+
 
 
 
@@ -459,6 +473,9 @@ plt.scatter(x,y)
 plt.title(“Scatterplot of Engine Size vs Price”)
 plt.xlabel(“Engine Size”) 
 plt.ylabel(“Price”) 
+
+
+
 
 
 
@@ -479,10 +496,22 @@ df[['price','body-style']].groupby(['body-style'],as_index= False).mean()
 
 
 
+
+
+
+
+
+
 ### Transform the table to a pivot table that has one variable displayed along the columns and the other variable displayed along the rows.
 
 
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html
+
+
+
+
+
+
 
 
 
@@ -492,6 +521,12 @@ https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.ht
 https://seaborn.pydata.org/generated/seaborn.heatmap.html
 
 https://matplotlib.org/3.1.1/gallery/images_contours_and_fields/image_annotated_heatmap.html
+
+
+
+
+
+
 
 
 
@@ -511,6 +546,17 @@ P-value will tell us how certain we are about the correlation that we calculated
 
 
 
+
+We  can say there is a strong vorrelation when the values are 
+
+ - Correlation Coefficient close to 1 or -1
+ - Pvalue less than 0.001
+
+
+
+
+
+
 ### Examplecode segment for Pearson correlation
 
 pearson_coef, p_value = stats.pearsonr(df["horsepower"], df ["prise"])
@@ -519,3 +565,36 @@ pearson_coef, p_value = stats.pearsonr(df["horsepower"], df ["prise"])
 # sample result will be 
 # * Pearson correlatio: 0.81
 # * P-value: 9.35e-48
+
+
+
+
+
+
+
+
+
+
+
+
+*********************** Week 4  - Model Development
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
